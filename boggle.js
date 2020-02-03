@@ -1,3 +1,5 @@
+let alphabet = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+
 function newBoggleBoard() {
   return [
     ['_', '_', '_', '_'],
@@ -7,25 +9,23 @@ function newBoggleBoard() {
   ];
 }
 
-/**
- * Prints out a boggle board.
- */
 function printBoggleBoard(boggleBoard) {
   for (let row of boggleBoard) {
     console.log(row.join(' '));
   }
 }
 
-/**
- * Shake a boggle board and fill it with letters.
- */
-function shake(boggleBoard) {
-  // This is your job. :)
-  return boggleBoard;
-}
 
+function shake(board) {
+ for (a=0; a<=15; a++){
+   board[a] = alphabet[Math.floor(Math.random()*26)];
+ }
+  return board;
+}
+//console.log(newBoggleBoard);
 let board = newBoggleBoard();
 
 shake(board);
+console.log( board);
 
-printBoggleBoard(board);
+//printBoggleBoard(newBoggleBoard);
